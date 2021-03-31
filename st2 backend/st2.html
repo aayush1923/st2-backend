@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div #d1 {
+  background-color: lightblue;
+   margin: 25px;
+  width: 290px;
+  
+  padding: 30px;
+  width: 290px;
+ 
+  
+}
+
+</style>
+</head>
+<body>
+<div>  <center>
+<div id="d1"><center>
+<h3>DETAIL FORM</h3>
+
+Name :<input id="name"><br><br>
+
+Mob no:<input id="no"><br><br>
+
+Email :<input id="email"><br><br>
+
+<button type="button" onclick="myFunction()">Submit</button>
+</div>
+
+<span id="nn"></span>
+<span id="phn"></span>
+<span id="eee"></span>
+</div>
+
+
+
+
+<script>
+function myFunction() {
+
+  //for name
+  var text1;
+  var n=document.getElementById("name").value;
+  
+  if(n=="")
+    {
+      alert("empty name field");
+    }
+    else if(n.length<3)
+     {
+       alert("name too short");
+      }
+    else
+     {
+        text1=n;
+     }
+    document.getElementById("nn").innerHTML = text1;
+
+//for no.
+ var x, text;
+ x = document.getElementById("no").value;
+
+  if (isNaN(x) || x.length!=10)
+  {
+    text = "not valid number";
+  } 
+  else
+  {
+    text = x;
+  }
+  document.getElementById("phn").innerHTML = text;
+  
+  //for email
+  var em;
+  var ee=document.getElementById("email").value;
+  var mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+  
+   if(ee.value.match(mailformat))
+ {
+  em=ee;
+  document.getElementById("eee").innerHTML=em;
+ }
+ else
+ {
+   document.getElementById("eee").innerHTML=console.log("invalid email address!");
+  }
+      
+  
+  
+
+}
+</script>
+
+</body>
+</html> 
